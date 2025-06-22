@@ -5,11 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>틀린그림찾기 게임</title>
   <style>
-    body { font-family: sans-serif; text-align: center; margin: 0; background: #f9f9f9; }
-    #game-area { display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
-    canvas { border: 2px solid #ccc; }
-    #info { margin-top: 10px; font-size: 18px; }
-    button { margin-top: 10px; padding: 10px 20px; font-size: 16px; }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin: 0;
+      background: #f9f9f9;
+      padding: 10px;
+    }
+
+    h1 {
+      font-size: 6vw;
+      margin-bottom: 10px;
+    }
+
+    #game-area {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      #game-area {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    canvas {
+      width: 90vw;
+      max-width: 400px;
+      height: auto;
+      border: 2px solid #ccc;
+      background: white;
+    }
+
+    #info {
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
   </style>
 </head>
 <body>
@@ -27,9 +80,7 @@
   <div id="info">
     <div>남은 시간: <span id="timer">60</span>초</div>
     <div>점수: <span id="score">0</span></div>
-   
     <button id="hintBtn">힌트 보기 💡</button>
-
   </div>
   <script src="script.js"></script>
 </body>
