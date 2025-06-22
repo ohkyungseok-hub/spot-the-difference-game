@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>틀린그림찾기 게임</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin: 0; background: #f9f9f9; }
+    #game-area { display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+    canvas { border: 2px solid #ccc; }
+    #info { margin-top: 10px; font-size: 18px; }
+    button { margin-top: 10px; padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>틀린그림찾기</h1>
+  <div id="game-area">
+    <div>
+      <h3>원본</h3>
+      <canvas id="originalCanvas" width="600" height="800"></canvas>
+    </div>
+    <div>
+      <h3>틀린 그림</h3>
+      <canvas id="gameCanvas" width="600" height="800"></canvas>
+    </div>
+  </div>
+  <div id="info">
+    <div>남은 시간: <span id="timer">60</span>초</div>
+    <div>점수: <span id="score">0</span></div>
+   
+    <button id="hintBtn">힌트 보기 💡</button>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
