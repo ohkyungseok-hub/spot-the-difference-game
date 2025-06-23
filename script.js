@@ -59,8 +59,10 @@ function startNewRound() {
 
 gameCanvas.addEventListener("click", function (e) {
   const rect = gameCanvas.getBoundingClientRect();
-  const clickX = e.clientX - rect.left;
-  const clickY = e.clientY - rect.top;
+  const scaleX = gameCanvas.width / rect.width;
+  const scaleY = gameCanvas.height / rect.height;
+  const clickX = (e.clientX - rect.left) * scaleX;
+  const clickY = (e.clientY - rect.top) * scaleY;
 
   for (let i = 0; i < differences.length; i++) {
     const d = differences[i];
